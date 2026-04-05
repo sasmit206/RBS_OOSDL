@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.hotel.controller.BookingConfirmationController"
+           styleClass="confirm-root"
+           style="-fx-padding: 0;">
+
+    <VBox styleClass="confirm-card" alignment="TOP_CENTER" spacing="0">
+
+        <!-- Green success banner -->
+        <VBox styleClass="confirm-banner" alignment="CENTER" spacing="6">
+            <Text text="✓" styleClass="confirm-check"/>
+            <Label text="Booking Confirmed!" styleClass="confirm-banner-title"/>
+        </VBox>
+
+        <!-- Details body -->
+        <VBox styleClass="confirm-body" spacing="0">
+
+            <Label text="BOOKING DETAILS" styleClass="confirm-section-title"/>
+
+            <GridPane styleClass="confirm-grid" hgap="16" vgap="11">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="110" hgrow="NEVER"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                </columnConstraints>
+
+                <Label text="Customer"    GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="confirm-key"/>
+                <Label fx:id="lblCustomer" text="—" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="confirm-value"/>
+
+                <Label text="Room Number"  GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="confirm-key"/>
+                <Label fx:id="lblRoom"     text="—" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="confirm-value"/>
+
+                <Label text="Room Type"   GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="confirm-key"/>
+                <Label fx:id="lblType"    text="—" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="confirm-value"/>
+
+                <Label text="Price / Night" GridPane.columnIndex="0" GridPane.rowIndex="3" styleClass="confirm-key"/>
+                <Label fx:id="lblPrice"   text="—" GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="confirm-value confirm-price"/>
+
+                <Label text="Check-in"    GridPane.columnIndex="0" GridPane.rowIndex="4" styleClass="confirm-key"/>
+                <Label fx:id="lblCheckIn" text="—" GridPane.columnIndex="1" GridPane.rowIndex="4" styleClass="confirm-value"/>
+
+                <Label text="Booking ID"  GridPane.columnIndex="0" GridPane.rowIndex="5" styleClass="confirm-key"/>
+                <Label fx:id="lblBookingId" text="—" GridPane.columnIndex="1" GridPane.rowIndex="5" styleClass="confirm-value confirm-id"/>
+            </GridPane>
+
+        </VBox>
+
+        <!-- Footer -->
+        <VBox styleClass="confirm-footer" alignment="CENTER" spacing="10">
+            <Label text="Thank you for choosing us  🏨" styleClass="confirm-thanks"/>
+            <Button text="  Done  " onAction="#handleClose" styleClass="confirm-close-btn"/>
+        </VBox>
+
+    </VBox>
+</StackPane>
